@@ -1,4 +1,4 @@
-export interface IInitializer {
+export interface IInitializer<TDatabaseManager> {
 
-    InitializeDatabase();
+    InitializeDatabase(): Promise<TDatabaseManager>;
 }

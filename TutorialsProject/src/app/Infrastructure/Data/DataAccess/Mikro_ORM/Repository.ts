@@ -1,18 +1,40 @@
 import { IRepository } from "../Interfaces/IRepository";
 import { IEntityBase } from "../../DataModels/Interfaces/EntityBase/IEntityBase";
 import { IInitializer } from "../Interfaces/IInitializer";
+import { Initializer } from "./Initializer";
+import { MikroORM, EntityManager, IDatabaseDriver, Connection } from "mikro-orm";
 
 export class Repository<TEntity extends IEntityBase<any>> implements IRepository<TEntity>
 {
-    Initializer: IInitializer;
-    InitializeDatabase(): void {
-        throw new Error("Method not implemented.");
+    constructor() {
+        this.InitializeDatabase();
+    }
+    Initializer: IInitializer<MikroORM<IDatabaseDriver<Connection>>> = new Initializer();
+    entityManager: EntityManager;
+    databaseManager: MikroORM<IDatabaseDriver<Connection>>;
+    async InitializeDatabase() {
+        try {
+            var orm = await this.Initializer.InitializeDatabase();
+            this.entityManager = orm.em;
+            this.databaseManager = orm;
+        }
+        catch (e) {
+
+        }
     }
     BeginTransaction(): void {
-        throw new Error("Method not implemented.");
+        try {
+            // Bakýlacak
+        } catch (e) {
+
+        }
     }
     Commit(): void {
-        throw new Error("Method not implemented.");
+        try {
+            
+        } catch (e) {
+
+        }
     }
     DisposeTransaction(): void {
         throw new Error("Method not implemented.");
@@ -41,7 +63,7 @@ export class Repository<TEntity extends IEntityBase<any>> implements IRepository
     Queryable() {
         throw new Error("Method not implemented.");
     }
-
+    // TODO :: OVERLOAD 
     Find(predicate: any): TEntity {
         try {
             return null;
@@ -56,9 +78,9 @@ export class Repository<TEntity extends IEntityBase<any>> implements IRepository
 
         }
     }
-     
-     
-    // TODO :: OVERLOAD 
+
+
+
     Delete(entity: any) {
         throw new Error("Method not implemented.");
     }

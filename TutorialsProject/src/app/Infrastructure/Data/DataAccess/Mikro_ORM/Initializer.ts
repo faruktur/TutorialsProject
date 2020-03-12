@@ -1,11 +1,11 @@
-import { MikroORM } from 'mikro-orm';
+import { MikroORM, IDatabaseDriver, Connection } from 'mikro-orm';
 import { IInitializer } from '../Interfaces/IInitializer';
 import settings from './settings.json';
 
 
-export class Initializer implements IInitializer {
+export class Initializer implements IInitializer<MikroORM<IDatabaseDriver<Connection>>> {
 
-	async InitializeDatabase() {
+	async InitializeDatabase(): Promise<MikroORM<IDatabaseDriver<Connection>>> {
 		try {
 			const orm = await MikroORM.init({
 				// TODO Settingsten alýnacak
@@ -16,7 +16,7 @@ export class Initializer implements IInitializer {
 				baseDir: __dirname, // defaults to `process.cwd()`
 				autoFlush: false, // read more here: https://mikro-orm.io/unit-of-work/
 			})
-			console.log(orm.em);
+			return orm;
 		} catch (e) {
 
 		}
