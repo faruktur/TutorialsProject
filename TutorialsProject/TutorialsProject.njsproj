@@ -34,10 +34,9 @@
     <None Include="routes\index.ts" />
     <None Include="routes\user.ts" />
     <Content Include="src\app\Infrastructure\Data\DataAccess\Interfaces\IRepository.ts" />
-    <Content Include="src\app\Infrastructure\Data\DataAccess\Mikro_ORM\Initializer.ts" />
-    <Content Include="src\app\Infrastructure\Data\DataAccess\Mikro_ORM\Repository.ts" />
-    <Content Include="src\app\Infrastructure\Data\DataAccess\Mikro_ORM\settings.json" />
+    <Content Include="src\app\Infrastructure\Data\DataAccess\TypeORM\settings.json" />
     <Content Include="src\app\Infrastructure\Data\DataModels\Interfaces\EntityBase\IEntityBase.ts" />
+    <Content Include="src\app\Infrastructure\Data\DataModels\TypeORM\Article\ArticleEntity.ts" />
     <Content Include="tsconfig.json" />
     <Content Include="package.json" />
     <Content Include="public\stylesheets\main.css" />
@@ -50,18 +49,19 @@
     <Folder Include="src\app\Infrastructure\" />
     <Folder Include="src\app\Infrastructure\Data\" />
     <Folder Include="src\app\Infrastructure\Data\DataAccess\" />
-    <Folder Include="src\app\Infrastructure\Data\DataAccess\Mikro_ORM\" />
     <Folder Include="src\app\Infrastructure\Data\DataAccess\Interfaces\" />
+    <Folder Include="src\app\Infrastructure\Data\DataAccess\TypeORM\" />
     <Folder Include="src\app\Infrastructure\Data\DataModels\" />
     <Folder Include="src\app\Infrastructure\Data\DataModels\Interfaces\Article\" />
     <Folder Include="src\app\Infrastructure\Data\DataModels\Interfaces\Category\" />
     <Folder Include="src\app\Infrastructure\Data\DataModels\Interfaces\EntityBase\" />
     <Folder Include="src\app\Infrastructure\Data\DataModels\Interfaces\User\" />
-    <Folder Include="src\app\Infrastructure\Data\DataModels\Mikro_ORM\" />
-    <Folder Include="src\app\Infrastructure\Data\DataModels\Mikro_ORM\Article\" />
-    <Folder Include="src\app\Infrastructure\Data\DataModels\Mikro_ORM\Category\" />
-    <Folder Include="src\app\Infrastructure\Data\DataModels\Mikro_ORM\User\" />
     <Folder Include="src\app\Infrastructure\Data\DataModels\Interfaces\" />
+    <Folder Include="src\app\Infrastructure\Data\DataModels\TypeORM\" />
+    <Folder Include="src\app\Infrastructure\Data\DataModels\TypeORM\Article\" />
+    <Folder Include="src\app\Infrastructure\Data\DataModels\TypeORM\Category\" />
+    <Folder Include="src\app\Infrastructure\Data\DataModels\TypeORM\EntityBase\" />
+    <Folder Include="src\app\Infrastructure\Data\DataModels\TypeORM\User\" />
     <Folder Include="src\app\Infrastructure\Data\UnitOfWork\" />
     <Folder Include="src\" />
     <Folder Include="public\" />
@@ -74,8 +74,11 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="src\app\Infrastructure\Data\DataAccess\Interfaces\IInitializer.ts" />
-    <TypeScriptCompile Include="src\app\Infrastructure\Data\DataModels\Mikro_ORM\BaseEntity.ts" />
-    <TypeScriptCompile Include="src\app\Infrastructure\Data\DataModels\Mikro_ORM\User\UserEntity.ts" />
+    <TypeScriptCompile Include="src\app\Infrastructure\Data\DataAccess\TypeORM\DBConnectionManager.ts" />
+    <TypeScriptCompile Include="src\app\Infrastructure\Data\DataAccess\TypeORM\Repository.ts" />
+    <TypeScriptCompile Include="src\app\Infrastructure\Data\DataModels\TypeORM\EntityBase\EntityBase.ts" />
+    <TypeScriptCompile Include="src\app\Infrastructure\Data\DataModels\index.ts" />
+    <TypeScriptCompile Include="src\app\Infrastructure\Data\DataModels\TypeORM\User\UserEntity.ts" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>

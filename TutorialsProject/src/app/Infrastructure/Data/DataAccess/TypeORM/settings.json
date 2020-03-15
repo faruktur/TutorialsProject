@@ -1,0 +1,11 @@
+{
+  "Database": {
+    "PostgreSQL": {
+      "host": "localhost",
+      "databasename": "TutorialProject",
+      "username": "postgres",
+      "password": "134679",
+      "port": 5432
+    }
+  }
+}

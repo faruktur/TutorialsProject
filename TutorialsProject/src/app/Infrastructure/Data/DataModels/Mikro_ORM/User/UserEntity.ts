@@ -1,7 +1,0 @@
-import { BaseEntity } from "../BaseEntity";
-
-export class UserEntity extends BaseEntity<string> {
-
-
-         
-}
